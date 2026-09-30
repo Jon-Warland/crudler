@@ -1,22 +1,14 @@
-import { StatusBar } from "expo-status-bar";
 import { StyleSheet, Text, View } from "react-native";
+import Screen from "../layout/Screen";
 
 const ModuleAddScreen = () => {
   return (
-    <View style={styles.container}>
+    <Screen>
       <Text>Add</Text>
-      <StatusBar style="light" />
-    </View>
+    </Screen>
   );
 };
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: "#fff",
-    alignItems: "center",
-    justifyContent: "center",
-  },
-});
+const styles = StyleSheet.create({});
 
 export default ModuleAddScreen;
