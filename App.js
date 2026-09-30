@@ -7,8 +7,11 @@ import ModuleViewScreen from "./src/components/screens/ModuleViewScreen";
 import ModuleModifyScreen from "./src/components/screens/ModuleModifyScreen";
 import ModuleAddScreen from "./src/components/screens/ModuleAddScreen";
 
+// Initialisations --------
 const Stack = createNativeStackNavigator();
-
+// State ----------
+// Handlers -----------
+// View -------------
 export const App = () => {
   return (
     <NavigationContainer>
