@@ -13,6 +13,7 @@ const Screen = ({ children }) => {
 const styles = StyleSheet.create({
   screen: {
     flex: 1,
+    padding: 15,
     backgroundColor: "#fff",
     alignItems: "center",
     justifyContent: "center",
