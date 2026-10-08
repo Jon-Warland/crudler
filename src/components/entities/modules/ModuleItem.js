@@ -6,7 +6,7 @@ const ModuleItem = ({ module, onSelect }) => {
   // Handlers ------------------
   // View ----------------------
   return (
-    <Pressable key={module.ModuleCode} onPress={onSelect}>
+    <Pressable onPress={() => onSelect(module)}>
       <View style={styles.item}>
         <Text style={styles.text}>
           {module.ModuleCode} {module.ModuleName}
