@@ -2,8 +2,10 @@ import { useState } from "react";
 import { Pressable, ScrollView, StyleSheet, Text, View } from "react-native";
 import Screen from "../layout/Screen";
 import ModuleList from "../entities/modules/ModuleList";
+import RendderCount from "../UI/RenderCount";
 
 import initialModules from "../../data/modules";
+import RenderCount from "../UI/RenderCount";
 
 const ModuleListScreen = () => {
   // Initialisations --------
@@ -16,6 +18,7 @@ const ModuleListScreen = () => {
   // View -------------
   return (
     <Screen>
+      <RenderCount />
       <ModuleList modules={modules} onSelect={handleDelete} />
     </Screen>
   );
