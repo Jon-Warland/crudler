@@ -1,6 +1,6 @@
 import { StyleSheet, Text, View } from "react-native";
 import Screen from "../layout/Screen";
-import FullWidthImage from "react-native-fullwidth-image";
+import ModuleView from "../entities/modules/ModuleView";
 
 const ModuleViewScreen = ({ navigate, route }) => {
   // Initialisations -----------
@@ -10,46 +10,11 @@ const ModuleViewScreen = ({ navigate, route }) => {
   // View ----------------------
   return (
     <Screen>
-      <View style={styles.container}>
-        <FullWidthImage
-          source={{ uri: module.ModuleImage }}
-          style={styles.image}
-        />
-        <View style={styles.infoTray}>
-          <Text style={styles.boldText}>
-            View {module.ModuleCode} {module.ModuleName}
-          </Text>
-          <Text style={styles.text}>Level {module.ModuleLevel}</Text>
-          <Text style={styles.text}>
-            {module.ModuleLeaderName}{" "}
-            <Text style={styles.dimText}>(Module Leader)</Text>
-          </Text>
-        </View>
-      </View>
+      <ModuleView module={module} />
     </Screen>
   );
 };
 
-const styles = StyleSheet.create({
-  container: {
-    gap: 15,
-  },
-  image: {
-    borderRadius: 3,
-  },
-  infoTray: {
-    gap: 5,
-  },
-  text: {
-    fontSize: 16,
-  },
-  boldText: {
-    fontSize: 16,
-    fontWeight: "bold",
-  },
-  dimText: {
-    color: "gray",
-  },
-});
+const styles = StyleSheet.create({});
 
 export default ModuleViewScreen;
