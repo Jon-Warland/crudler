@@ -1,23 +1,19 @@
+import { useState } from "react";
 import { Pressable, ScrollView, StyleSheet, Text, View } from "react-native";
 import Screen from "../layout/Screen";
-import initialModules from "../../data/modules";
 import ModuleList from "../entities/modules/ModuleList";
 
-// Initialisations --------
-let modules = initialModules;
-// State ----------
-// Handlers -----------
-const handleDelete = (module) => {
-  modules = modules.filter((item) => {
-    if (item.ModuleID !== module.ModuleID) return true;
-    else return false;
-  });
-  console.log(
-    `After deleting ${module.ModuleCode}, modules has length ${modules.length}`,
-  );
-};
-// View -------------
+import initialModules from "../../data/modules";
+
 const ModuleListScreen = () => {
+  // Initialisations --------
+  // State ----------
+  const [modules, setModules] = useState(initialModules);
+  // Handlers -----------
+  const handleDelete = (module) =>
+    setModules(modules.filter((item) => item.ModuleID !== module.ModuleID));
+
+  // View -------------
   return (
     <Screen>
       <ModuleList modules={modules} onSelect={handleDelete} />
