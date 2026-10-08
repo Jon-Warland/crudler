@@ -4,15 +4,23 @@ import initialModules from "../../data/modules";
 import ModuleList from "../entities/modules/ModuleList";
 
 // Initialisations --------
-const modules = initialModules;
+let modules = initialModules;
 // State ----------
 // Handlers -----------
-const handleSelect = (module) => alert(`Item ${module.ModuleCode} selected`);
+const handleDelete = (module) => {
+  modules = modules.filter((item) => {
+    if (item.ModuleID !== module.ModuleID) return true;
+    else return false;
+  });
+  console.log(
+    `After deleting ${module.ModuleCode}, modules has length ${modules.length}`,
+  );
+};
 // View -------------
 const ModuleListScreen = () => {
   return (
     <Screen>
-      <ModuleList modules={modules} onSelect={handleSelect} />
+      <ModuleList modules={modules} onSelect={handleDelete} />
     </Screen>
   );
 };
