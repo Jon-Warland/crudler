@@ -13,7 +13,7 @@ const ModuleListScreen = ({ navigation, route }) => {
   const [modules, setModules] = useState(initialModules);
   // Handlers -----------
   const handleSelect = (module) =>
-    navigation.navigate("ModuleViewScreen", { module, handleDelete });
+    navigation.navigate("ModuleViewScreen", { module, onDelete });
   const handleDelete = (module) => {
     setModules(modules.filter((item) => item.ModuleID !== module.ModuleID));
     console.log("Deleted something");
